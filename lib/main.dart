@@ -4,6 +4,7 @@ import 'package:zaffnews/constants/colors.dart';
 import 'package:zaffnews/widgets/my_appbar.dart';
 import 'package:zaffnews/widgets/my_list_item.dart';
 import 'package:zaffnews/widgets/news_card.dart';
+import 'package:zaffnews/widgets/news_card_secondary.dart';
 import 'package:zaffnews/widgets/news_carousel_card.dart';
 import 'package:zaffnews/data/news_data.dart';
 
@@ -39,8 +40,10 @@ class MyHomePage extends StatelessWidget {
           MyListItem(
             text: 'Trending News',
             isSubheading: true,
-            isClickable: true,
+            isRedirect: true,
           ),
+          Divider(height: 1.0, color: dividerColor),
+          MySecondaryNewsCard(model: news[0]),
           MyNewsCard(model: news[0]),
         ]
       ),

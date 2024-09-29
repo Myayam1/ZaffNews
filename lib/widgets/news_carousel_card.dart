@@ -54,7 +54,7 @@ class MyNewsCarouselCard extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            SizedBox(width: 10),
                             Text(
                               model.channelName,
                               style: TextStyle(
@@ -67,6 +67,7 @@ class MyNewsCarouselCard extends StatelessWidget {
                             ),
                           ],
                         ),
+                        SizedBox(height: 5),
                         Text(
                           model.headline,
                           softWrap: true,
@@ -77,6 +78,7 @@ class MyNewsCarouselCard extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
+                        SizedBox(height: 5),
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Text(
