@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   viewBox="0 0 20.435234 14.618357"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-145.79396,-21.596547)">
+    <g
+       id="g6"
+       style="fill:none;fill-opacity:1;stroke:#660080;stroke-opacity:1">
+      <g
+         id="g7">
+        <path
+           d="m 155.6484,22.096548 c -1.1381,0 -2.34236,0.828953 -2.55102,2.217812 l -0.54612,3.63503 -0.50631,3.370054 h 3.3757 l 0.58867,-3.918222 1.88472,3.918222 h 1.68094 a 0.35427334,0.41164659 47.147958 0 1 0.32494,0.382403 l -0.43357,2.88591 0.0412,0.08542 c 0.35283,0.733009 1.11685,1.041729 2.00418,1.041729 1.13808,0 2.33952,-0.810119 2.54818,-2.198977 l 1.66929,-11.11105 h -3.37569 l -1.2027,8.005353 -3.49812,-7.272563 c -0.35283,-0.733009 -1.09765,-1.041097 -2.00426,-1.041097 z"
+           style="font-weight:bold;font-size:15.875px;line-height:1.1;font-family:Chillax;-inkscape-font-specification:'Chillax Bold';text-align:center;letter-spacing:-0.529167px;word-spacing:0px;text-anchor:middle;fill:none;fill-opacity:1;stroke:#660080;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:3.51496;stroke-opacity:1"
+           id="path4" />
+        <path
+           d="m 152.73146,26.394054 0.26962,-1.794604 c 0.094,-0.626384 0.37536,-1.160882 0.76061,-1.5811 h -5.6312 l -0.50716,3.375704 z"
+           style="font-weight:bold;font-size:15.875px;line-height:1.1;font-family:Chillax;-inkscape-font-specification:'Chillax Bold';text-align:center;letter-spacing:-0.529167px;word-spacing:0px;text-anchor:middle;fill:none;fill-opacity:1;stroke:#660080;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:3.51496;stroke-opacity:1"
+           id="path5" />
+        <path
+           id="path6"
+           style="font-weight:bold;font-size:15.875px;line-height:1.1;font-family:Chillax;-inkscape-font-specification:'Chillax Bold';text-align:center;letter-spacing:-0.529167px;word-spacing:0px;text-anchor:middle;fill:none;fill-opacity:1;stroke:#660080;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:3.51496;stroke-opacity:1"
+           d="m 152.45547,27.663692 -4.76836,2.749661 c -0.80256,0.462953 -1.23292,1.272719 -1.36623,2.160045 -0.17098,1.138099 0.47682,2.218444 1.86567,2.218444 h 3.198 4.13926 3.77318 l 0.0574,-0.381772 0.4498,-2.99392 h -1.89067 -1.8825 -4.13926 -0.0923 l 0.1011,-0.05845 z" />
+      </g>
+    </g>
+  </g>
+</svg>
