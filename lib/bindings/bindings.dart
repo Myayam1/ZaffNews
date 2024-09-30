@@ -5,7 +5,7 @@ import '../controllers/tab_controller.dart';
 class MyBindings extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<TabControllerX>(() => TabControllerX());
+    Get.lazyPut(() => TabControllerX());
     Get.lazyPut(() => DashboardController());
   }
 }
