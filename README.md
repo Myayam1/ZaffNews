@@ -1,6 +1,6 @@
 # zaffnews
 
-Test
+Test2
 
 ## Getting Started
 
