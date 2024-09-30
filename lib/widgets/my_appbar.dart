@@ -64,7 +64,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      bottom: PreferredSize(
+      bottom: hasTabs ? PreferredSize(
         preferredSize: Size.fromHeight(48.0), // Height for TabBar only
         child: Container(
           padding: EdgeInsets.only(top: 8.0), // Set desired top padding
@@ -76,10 +76,10 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
             ],
           ),
         ),
-      ),
+      ) : null,
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(108.0); // Total height of AppBar + TabBar
+  Size get preferredSize => Size.fromHeight(hasTabs ? 108.0 : 60.0); // Total height of AppBar + TabBar
 }

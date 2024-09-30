@@ -15,7 +15,9 @@ class ListAdapter extends StatelessWidget {
         return MyListItem(
           text: entry.text,
           leadingIcon: entry.leadingIcon,
+          trailingIcon: entry.trailingIcon,
           isSubheading: entry.isSubheading,
+          color: entry.color,
           onPressed: entry.onPressed,
           isRedirect: entry.isRedirect,
           hasDivider: entry.hasDivider,
