@@ -23,14 +23,14 @@ class MyListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isClickable = this.isRedirect ?? false;
+    final bool isClickable = isRedirect ?? false;
     final bool isDisabled = this.isDisabled ?? false;
 
     return Material(
       color: isClickable ? (isSubheading ?? false ? backgroundColor : Colors.white) : Colors.transparent,
       child: InkWell(
-        onTap: isClickable && !isDisabled ? onPressed : null,
-        splashColor: Colors.grey.withOpacity(0.2), // Optional: Set splash color
+        onTap: isClickable && !isDisabled ? onPressed : () {},
+        splashColor: Colors.blue.withOpacity(0.5), // Optional: Set splash color
         child: Column(
           children: [
             Container(

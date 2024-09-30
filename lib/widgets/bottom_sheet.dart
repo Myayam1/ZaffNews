@@ -9,6 +9,7 @@ class MyBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewPadding.bottom),
       width: MediaQuery.of(context).size.width,
       height: 250,
       decoration: BoxDecoration(

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:zaffnews/constants/colors.dart';
-import 'package:zaffnews/widgets/my_appbar.dart';
-import 'package:zaffnews/widgets/my_list_item.dart';
-import 'package:zaffnews/widgets/news_card.dart';
-import 'package:zaffnews/widgets/news_card_secondary.dart';
-import 'package:zaffnews/widgets/news_carousel_card.dart';
-import 'package:zaffnews/data/news_data.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/bindings_interface.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:zaffnews/bindings/bindings.dart';
+import 'package:zaffnews/pages/bottom_nav_container.dart';
+import 'package:zaffnews/pages/bottom_nav_pages/home.dart';
+import 'package:zaffnews/pages/sub_pages/blocked_channels.dart';
+import 'package:zaffnews/pages/sub_pages/saved_articles.dart';
+import 'package:zaffnews/pages/sub_pages/search_page.dart';
+import 'package:zaffnews/widgets/bottom_sheet.dart';
+
+import 'controllers/tab_controller.dart';
 
 void main() {
   // debugPaintSizeEnabled = true;
@@ -16,37 +21,17 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      home: MyHomePage(),
+    return GetMaterialApp(
+      initialRoute: '/',
+      initialBinding: MyBindings(),
+      getPages: [
+        GetPage(name: '/', page: () => DashboardPage()),
+        GetPage(name: '/search', page: () => MySearchPage()),
+        GetPage(name: '/blocked-channels', page: () => MyBlockedChannelsPage()),
+        GetPage(name: '/saved', page: () => MySavedArticlesPage()),
+      ],
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppbar(title: "Home", showSearch: true),
-      body: Column(
-        children: [
-          Divider(height: 2.0, color: dividerColor),
 
-          MyNewsCarouselCard(model: news[0]),
-
-          MyListItem(
-            text: 'Trending News',
-            isSubheading: true,
-            isRedirect: true,
-          ),
-          Divider(height: 1.0, color: dividerColor),
-          MySecondaryNewsCard(model: news[0]),
-          MyNewsCard(model: news[0]),
-        ]
-      ),
-    );
-  }
-}
