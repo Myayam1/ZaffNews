@@ -4,20 +4,24 @@ import '../constants/colors.dart';
 class MyListItem extends StatelessWidget {
   final String text;
   final IconData? leadingIcon;
+  final IconData? trailingIcon;
   final bool? isDisabled;
   final bool? isRedirect;
   final bool? isSubheading;
-  final VoidCallback? onPressed;
   final bool? hasDivider;
+  final Color? color;
+  final VoidCallback? onPressed;
 
   const MyListItem({
     Key? key,
     required this.text,
+    this.trailingIcon,
     this.leadingIcon,
     this.isDisabled,
     this.isRedirect = true,
     this.isSubheading,
     this.onPressed,
+    this.color,
     this.hasDivider,
   }) : super(key: key);
 
@@ -25,6 +29,7 @@ class MyListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isClickable = isRedirect ?? false;
     final bool isDisabled = this.isDisabled ?? false;
+    final Color color = this.color ?? foregroundColor;
 
     return Material(
       color: isClickable ? (isSubheading ?? false ? backgroundColor : Colors.white) : Colors.transparent,
@@ -40,13 +45,13 @@ class MyListItem extends StatelessWidget {
               child: Row(
                 children: [
                   if (leadingIcon != null && !(isSubheading ?? false))
-                    Icon(leadingIcon, size: 24),
+                    Icon(leadingIcon, size: 24, color: color),
                   SizedBox(width: 16),
                   Expanded(
                     child: Text(
                       text,
                       style: TextStyle(
-                        color: foregroundColor,
+                        color: color,
                         fontSize: isSubheading ?? false ? 15 : 16,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
@@ -54,12 +59,14 @@ class MyListItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (isClickable)
-                    Icon(Icons.navigate_next, size: 24),
+                  if (trailingIcon != null)
+                    Icon(trailingIcon, color: color)
+                  else if (isClickable)
+                    Icon(Icons.navigate_next, size: 24, color: color),
                 ],
               ),
             ),
-            if (hasDivider ?? false) Divider(),
+            if (hasDivider ?? false) Container(height: 1.0, color: dividerColor),
           ],
         ),
       ),
