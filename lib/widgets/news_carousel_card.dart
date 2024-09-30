@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/constants/colors.dart';
+import 'package:zaffnews/helpers/bottom_sheet_helper.dart';
 import 'package:zaffnews/models/news_model.dart';
 import 'package:zaffnews/widgets/my_icon_button.dart';
 
@@ -10,26 +11,28 @@ class MyNewsCarouselCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double cardHeight = 200.0;
+
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 200,
+      height: cardHeight,
       child: Stack(
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: Image.asset(model.newsImagePath, fit: BoxFit.fitWidth)
+            child: Image.asset( model.newsImagePath, fit: BoxFit.fitWidth)
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 200,
+            height: cardHeight,
             decoration: BoxDecoration(
                 gradient: overlayGradient
             ),
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 200,
-            padding: EdgeInsets.all(10.0),
+            height: cardHeight,
+            padding: EdgeInsets.all(20.0),
             child: Expanded(
               child: Row(
                 children: [
@@ -44,17 +47,17 @@ class MyNewsCarouselCard extends StatelessWidget {
                               child: model.channelImagePath != null && model.channelImagePath!.isNotEmpty
                                   ? Image.asset(
                                 model.channelImagePath!,
-                                width: 24,
-                                height: 24,
+                                width: 20,
+                                height: 20,
                                 fit: BoxFit.cover,
                               )
                                   : Icon(
                                 Icons.account_circle,
-                                size: 24,
+                                size: 20,
                                 color: Colors.white,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            SizedBox(width: 7),
                             Text(
                               model.channelName,
                               style: TextStyle(
@@ -97,7 +100,7 @@ class MyNewsCarouselCard extends StatelessWidget {
                   Expanded(
                     child: Align(
                       alignment: Alignment.bottomRight,
-                      child: MyIconButton(icon: Icons.more_vert, onPressed: () {}, size: 18, color: inactiveText2)
+                      child: MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(context); }, size: 18, color: inactiveText2)
                     ),
                   )
                 ],

@@ -19,12 +19,12 @@ class MySecondaryNewsCard extends StatelessWidget {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            height: 195,
+            height: 200,
             child: Image.asset(model.newsImagePath, fit: BoxFit.fitWidth),
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 135,
+            height: 130,
             padding: EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
