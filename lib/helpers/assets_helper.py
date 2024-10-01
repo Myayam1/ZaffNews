@@ -1,7 +1,7 @@
 import os
 
 # Define the path to your pubspec.yaml and assets directory
-pubspec_path = 'pubspec.yaml'
+pubspec_path = '../../pubspec.yaml'
 assets_dir = input("Please input a path to check : ")
 print(f'Checking root/{assets_dir} for new assets...')
 

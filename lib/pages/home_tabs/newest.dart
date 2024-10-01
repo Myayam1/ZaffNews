@@ -25,7 +25,7 @@ class NewestView extends StatelessWidget {
           Divider(height: 1.0, color: dividerColor),
           CarouselSlider(
             options: CarouselOptions(
-              height: 250.0,
+              height: 200.0,
               autoPlay: true,
               autoPlayInterval: Duration(seconds: 5),
               enlargeCenterPage: true,

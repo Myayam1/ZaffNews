@@ -15,7 +15,7 @@ import 'package:zaffnews/widgets/bottom_sheet.dart';
 import 'controllers/tab_controller.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+  // debugPaintSizeEnabled = true;
   runApp(MyApp());
 }
 
