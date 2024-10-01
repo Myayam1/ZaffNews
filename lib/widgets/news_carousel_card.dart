@@ -11,7 +11,7 @@ class MyNewsCarouselCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double cardHeight = 250.0;
+    const double cardHeight = 200.0;
 
     return Container(
       width: MediaQuery.of(context).size.width,
