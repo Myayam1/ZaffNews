@@ -6,8 +6,9 @@ import 'package:zaffnews/widgets/my_icon_button.dart';
 
 class MyNewsCard extends StatelessWidget {
   final NewsModel model;
+  final bool hasDivider;
 
-  const MyNewsCard({super.key, required this.model});
+  const MyNewsCard({super.key, required this.model, this.hasDivider = true});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class MyNewsCard extends StatelessWidget {
       child: InkWell(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(vertical: 13.0, horizontal: 15.0),
+          padding: EdgeInsets.only(right: 13.0, left: 13.0, top: 15.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -99,7 +100,10 @@ class MyNewsCard extends StatelessWidget {
                   Spacer(),
                   MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(context); }, size: 18)
                 ]
-              )
+              ),
+              SizedBox(height: 15.0),
+              if (hasDivider)
+                Container(height: 1.0, color: dividerColor, padding: EdgeInsets.symmetric(horizontal: 40))
             ],
           ),
         ),

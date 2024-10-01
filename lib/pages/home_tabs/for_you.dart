@@ -14,7 +14,7 @@ class ForYouView extends StatelessWidget {
         children: items.map((entry) {
           return NewsAdapter(
             model: entry,
-
+            hasDivider: items.last == entry ? false : true,
           );
         }).toList(),
       ),
