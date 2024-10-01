@@ -56,7 +56,9 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
               if (showSearch)
                 MyIconButton(
                   icon: Icons.search,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/search');
+                  },
                 )
               else
                 SizedBox(width: 24),
