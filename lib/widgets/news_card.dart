@@ -16,85 +16,90 @@ class MyNewsCard extends StatelessWidget {
       child: InkWell(
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: 135,
           padding: EdgeInsets.symmetric(vertical: 13.0, horizontal: 15.0),
-          child: Row(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                width: 243,
-                child: Column( // Main section
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row( // Channel
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 243,
+                    child: Column( // Main section
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        ClipOval(
-                          child: model.channelImagePath != null && model.channelImagePath!.isNotEmpty
-                            ? Image.asset(
-                              model.channelImagePath!,
-                              width: 16,
-                              height: 16,
-                              fit: BoxFit.cover,
-                            )
-                            : Icon(
-                              Icons.account_circle,
-                              size: 16,
+                        Row( // Channel
+                          children: [
+                            ClipOval(
+                              child: model.channelImagePath != null && model.channelImagePath!.isNotEmpty
+                                ? Image.asset(
+                                  model.channelImagePath!,
+                                  width: 16,
+                                  height: 16,
+                                  fit: BoxFit.cover,
+                                )
+                                : Icon(
+                                  Icons.account_circle,
+                                  size: 16,
+                                ),
                             ),
+                            SizedBox(width: 5),
+                            Text(
+                              model.channelName,
+                              style: TextStyle(
+                                color: inactiveText1,
+                                fontSize: 11,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(width: 5),
+                        SizedBox(height: 7),
                         Text(
-                          model.channelName,
+                          model.headline,
+                          softWrap: true,
                           style: TextStyle(
-                            color: inactiveText1,
-                            fontSize: 11,
+                            color: foregroundColor,
+                            fontSize: 15,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 7),
-                    Text(
-                      model.headline,
-                      softWrap: true,
-                      style: TextStyle(
-                        color: foregroundColor,
-                        fontSize: 15,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    Spacer(),
-                    Text(
-                      model.timeUploaded,
-                      style: TextStyle(
-                        color: inactiveText1,
-                        fontSize: 11,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Spacer(),
-              Expanded(child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
+                  ),
+                  Spacer(),
                   Container(
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(model.newsImagePath), // Use AssetImage for the image
-                        fit: BoxFit.cover, // This will ensure the image covers the container
+                        fit: BoxFit.fitHeight, // This will ensure the image covers the container
                       ),
                       borderRadius: BorderRadius.circular(10), // Rounded corners
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Text(
+                    model.timeUploaded,
+                    style: TextStyle(
+                      color: inactiveText1,
+                      fontSize: 11,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   Spacer(),
                   MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(context); }, size: 18)
-                ],
-              ))
+                ]
+              )
             ],
           ),
         ),

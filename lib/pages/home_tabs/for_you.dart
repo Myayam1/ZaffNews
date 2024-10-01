@@ -7,7 +7,7 @@ import '../../component_page/card_adapter.dart';
 class ForYouView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<NewsModel> items = news;
+    final List<NewsModel> items = newsForYou;
 
     return SingleChildScrollView(
       child: Column(

@@ -11,7 +11,8 @@ import '../../constants/colors.dart';
 import '../../models/news_model.dart';
 
 class NewestView extends StatelessWidget {
-  final List<NewsModel> items = news;
+  final List<NewsModel> items = newestArticles;
+  final List<NewsModel> carouselItems = trendingNews;
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +25,15 @@ class NewestView extends StatelessWidget {
           Divider(height: 1.0, color: dividerColor),
           CarouselSlider(
             options: CarouselOptions(
-              height: 200.0,
+              height: 250.0,
               autoPlay: true,
               autoPlayInterval: Duration(seconds: 5),
-              enlargeCenterPage: true,  // Enlarges the center item
-              aspectRatio: 9 / 5,
+              enlargeCenterPage: true,
               autoPlayCurve: Curves.fastOutSlowIn,
               enableInfiniteScroll: true,
               viewportFraction: 1.0
             ),
-            items: items.map((item) {
+            items: carouselItems.map((item) {
               return Builder(
                 builder: (BuildContext context) {
                   return MyNewsCarouselCard(model: item);

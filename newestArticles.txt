@@ -1,0 +1,82 @@
+List<NewsModel> newestArticles = [
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Biztoc.com',
+          headline: 'A Once-in-a-Decade Opportunity: 2 AI Stocks to Buy Before They Soar 175% and 560%, According to Certain Wall Street Analysts',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_1.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Biztoc.com',
+          headline: 'As big supermarkets pursue profits, new research shows growing exploitation of shrimp farmers',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_2.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Android Central',
+          headline: 'Google Messages might add a special folder for annoying international texts',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_3.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'TechNode',
+          headline: 'NIO gets $471 million in Chinese state-backed funds',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_4.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Business Standard',
+          headline: 'Shivalik Bimetal Controls spurts on leadership transition and shareholding changes',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_5.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Marketplace.org',
+          headline: 'Parents, educators are unaware how their students use generative AI, report finds',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_6.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Thepinknews.com',
+          headline: '‘Stop throwing shellfish at her’: Bowen Yang denies ‘mocking’ Chappell Roan in SNL Moo Deng sketch',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_7.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'The Week Magazine',
+          headline: 'The best hot chocolates for a cosy treat',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_8.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'Antaranews.com',
+          headline: 'Tackling malnutrition in Indonesia through collaborative efforts',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_9.jpg',
+          isSaved: false
+      ),
+      NewsModel(
+          channelImagePath: 'lib/assets/news_assets/the_onion_logo.png',
+          channelName: 'International Business Times',
+          headline: 'Longest-serving Death Row Prisoner Hails Acquittal 'Victory'',
+          timeUploaded: '1 day ago',
+          newsImagePath: 'lib/assets/news_assets/newest/image_10.jpg',
+          isSaved: false
+      ),
+];

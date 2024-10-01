@@ -14,8 +14,8 @@ class MySecondaryNewsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 330,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -24,9 +24,9 @@ class MySecondaryNewsCard extends StatelessWidget {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 130,
             padding: EdgeInsets.all(16.0),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row( // Channel
@@ -70,7 +70,7 @@ class MySecondaryNewsCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
