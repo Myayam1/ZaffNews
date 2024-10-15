@@ -13,23 +13,21 @@ class MySavedArticlesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: MySubAppbar(title: "Saved Articles"),
       body: Obx(() { // Use Obx to reactively listen for changes
         List<NewsModel> items = databaseController.savedArticles;
         if (items.isEmpty) {
-          return Container(color: Colors.white, child: Center(child: Text("No saved articles.")));
+          return Center(child: Text("No saved articles."));
         }
         return SingleChildScrollView(
-          child: Container(
-            color: Colors.white,
-            child: Column(
-              children: items.map((entry) {
-                return NewsAdapter(
-                  model: entry,
-                  hasDivider: items.last == entry ? false : true,
-                );
-              }).toList(),
-            ),
+          child: Column(
+            children: items.map((entry) {
+              return NewsAdapter(
+                model: entry,
+                hasDivider: items.last == entry ? false : true,
+              );
+            }).toList(),
           ),
         );
       }),
