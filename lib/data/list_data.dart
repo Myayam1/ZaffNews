@@ -9,6 +9,8 @@ import 'package:get/get.dart';
 
 List<ListModel> bottomSheetList(NewsModel article) { // Pass the article as a parameter
   final DatabaseController databaseController = Get.find<DatabaseController>(); // Get the DatabaseController instance
+  List<List<NewsModel>> newsLists = [newestArticles, newsForYou, trendingNews];
+  databaseController.loadSavedArticles();
 
   return [
     ListModel(
@@ -16,8 +18,6 @@ List<ListModel> bottomSheetList(NewsModel article) { // Pass the article as a pa
       leadingIcon: !article.isSaved ? Icons.bookmark_border : Icons.bookmark,
       onPressed: () async {
         if (!article.isSaved) {
-          List<List<NewsModel>> newsLists = [newestArticles, newsForYou, trendingNews];
-
           print('Saving article: ${article.headline}');
           for (var newsList in newsLists) {
             if (newsList.contains(article)) {
@@ -35,7 +35,46 @@ List<ListModel> bottomSheetList(NewsModel article) { // Pass the article as a pa
           article.isSaved = true;
           await databaseController.saveArticle(article).then((_) {
             Get.back();
-            showMySnackbar(title: 'Article has been saved.', actionCallback: () { Get.toNamed('/saved'); }, actionLabel: 'SEE ALL');
+            showMySnackbar(title: 'Article has been saved.', actionLabel: 'SEE ALL', actionCallback: () { Get.toNamed('/saved'); });
+          });
+        } else {
+          print('Deleting article: ${article.headline}');
+          for (var newsList in newsLists) {
+            if (newsList.contains(article)) {
+              int index = newsList.indexOf(article);
+              if (index != -1) { // Ensure the index is valid
+                newsList[index].isSaved = false;
+              }
+            }
+          }
+
+          newestArticles = newsLists[0];
+          newsForYou = newsLists[1];
+          trendingNews = newsLists[2];
+
+          article.isSaved = false;
+          await databaseController.deleteSavedArticle(article.headline).then((_) {
+            Get.back();
+            showMySnackbar(title: 'Article deleted.', actionLabel: 'UNDO', actionCallback: () async {
+              print('Saving article: ${article.headline}');
+              for (var newsList in newsLists) {
+                if (newsList.contains(article)) {
+                  int index = newsList.indexOf(article);
+                  if (index != -1) { // Ensure the index is valid
+                    newsList[index].isSaved = true;
+                  }
+                }
+              }
+
+              newestArticles = newsLists[0];
+              newsForYou = newsLists[1];
+              trendingNews = newsLists[2];
+
+              article.isSaved = true;
+              await databaseController.saveArticle(article).then((_) {
+                Get.back();
+              });
+            });
           });
         }
       },
