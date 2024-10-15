@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/component_page/list_adapter.dart';
 import 'package:zaffnews/data/list_data.dart';
+import 'package:zaffnews/models/news_model.dart';
 import '../constants/colors.dart';
 
 class MyBottomSheet extends StatelessWidget {
-  const MyBottomSheet({super.key}); // Ensure the key is here
+  final NewsModel newsModel;
+  const MyBottomSheet({super.key, required this.newsModel}); // Ensure the key is here
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class MyBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: 30),
           // Drag handle
           Container(
             height: 4,
@@ -30,7 +32,7 @@ class MyBottomSheet extends StatelessWidget {
             ),
           ),
           Spacer(),
-          ListAdapter(items: bottomSheetList),
+          ListAdapter(items: bottomSheetList(newsModel)),
         ],
       ),
     );

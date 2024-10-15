@@ -19,9 +19,8 @@ class ListAdapter extends StatelessWidget {
           isSubheading: entry.isSubheading,
           color: entry.color,
           onPressed: entry.onPressed,
-          isRedirect: entry.isRedirect,
+          isClickable: entry.isClickable,
           hasDivider: entry.hasDivider,
-          isDisabled: entry.isDisabled,
         );
       }).toList(),
     );

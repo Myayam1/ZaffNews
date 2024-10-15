@@ -5,8 +5,7 @@ class ListModel {
   final IconData? leadingIcon;
   final IconData? trailingIcon;
   final Color? color;
-  final bool? isDisabled;
-  final bool? isRedirect;
+  final bool? isClickable;
   final bool? isSubheading;
   final bool? hasDivider;
   final VoidCallback? onPressed;
@@ -16,8 +15,7 @@ class ListModel {
     this.leadingIcon,
     this.trailingIcon,
     this.color,
-    this.isDisabled,
-    this.isRedirect,
+    this.isClickable,
     this.isSubheading,
     this.hasDivider,
     this.onPressed

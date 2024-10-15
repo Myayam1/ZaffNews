@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/constants/colors.dart';
-import 'package:zaffnews/helpers/bottom_sheet_helper.dart';
+import 'package:zaffnews/helpers/overlay_helper.dart';
 import 'package:zaffnews/models/news_model.dart';
 import 'package:zaffnews/widgets/my_icon_button.dart';
 
@@ -98,7 +98,7 @@ class MyNewsCard extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(context); }, size: 18)
+                  MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(model); }, size: 18)
                 ]
               ),
               SizedBox(height: 15.0),

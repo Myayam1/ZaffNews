@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zaffnews/models/news_model.dart';
 
 import '../constants/colors.dart';
-import '../helpers/bottom_sheet_helper.dart';
+import '../helpers/overlay_helper.dart';
 import 'my_icon_button.dart';
 
 class MySecondaryNewsCard extends StatelessWidget {
@@ -84,7 +84,7 @@ class MySecondaryNewsCard extends StatelessWidget {
                       ),
                     ),
                     Spacer(),
-                    MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(context); }, size: 18)
+                    MyIconButton(icon: Icons.more_vert, onPressed: () { showMyBottomSheet(model); }, size: 18)
                   ],
                 )
               ],
