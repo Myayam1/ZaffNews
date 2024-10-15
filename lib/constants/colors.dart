@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 const Color backgroundColor = Color(0xFFFFF2FF);
 const Color foregroundColor = Color(0xFF1D1B20);
+const Color snackBarBackground = Color(0xFF2E1A47);
 const Color foregroundActiveColor = Color(0xFF660080);
 const Color onBackgroundColor = Color(0xFFb4A7A7);
 const Color onBackgroundTextColor = Color(0xFF4E4351);

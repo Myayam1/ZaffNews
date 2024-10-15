@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:zaffnews/models/news_model.dart';
 
 List<NewsModel> newestArticles = [
@@ -81,7 +82,7 @@ List<NewsModel> newestArticles = [
       newsImagePath: 'lib/assets/news_assets/newest/image_10.jpg',
       isSaved: false
   ),
-];
+].obs;
 
 List<NewsModel> newsForYou = [
   NewsModel(
@@ -156,7 +157,7 @@ List<NewsModel> newsForYou = [
       newsImagePath: 'lib/assets/news_assets/foryou/image_10.jpg',
       isSaved: false
   ),
-];
+].obs;
 
 List<NewsModel> trendingNews = [
   NewsModel(
@@ -207,4 +208,4 @@ List<NewsModel> trendingNews = [
       newsImagePath: 'lib/assets/news_assets/trending/image_6.jpg',
       isSaved: false
   ),
-];
+].obs;

@@ -41,7 +41,7 @@ class NewestView extends StatelessWidget {
               );
             }).toList(),
           ),
-          MyListItem(text: "Newest Articles", isSubheading: true, isRedirect: false),
+          MyListItem(text: "Newest Articles", isSubheading: true, isClickable: false),
           Divider(height: 1.0, color: dividerColor),
           Column(
             children: items.map((entry) {
