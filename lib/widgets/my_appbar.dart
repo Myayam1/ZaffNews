@@ -20,10 +20,12 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     final TabControllerX tabController = Get.find(); // Get the controller instance
+    print('Appbar color: $backgroundColor');
 
     return AppBar(
       backgroundColor: backgroundColor,
       elevation: 0,
+      scrolledUnderElevation: 0,
       flexibleSpace: SafeArea(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16),

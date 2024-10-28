@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:zaffnews/controllers/database_controller.dart';
 import 'package:zaffnews/models/news_model.dart';
 import 'package:zaffnews/widgets/sub_menu_appbar.dart';
-import '../../component_page/card_adapter.dart';
+import '../../../component_page/card_adapter.dart';
 
 class MySavedArticlesPage extends StatelessWidget {
   MySavedArticlesPage({super.key});

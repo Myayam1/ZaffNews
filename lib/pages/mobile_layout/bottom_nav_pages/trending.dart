@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/widgets/my_appbar.dart';
 
-import '../../component_page/card_adapter.dart';
-import '../../data/news_data.dart';
-import '../../models/news_model.dart';
+import '../../../component_page/card_adapter.dart';
+import '../../../data/news_data.dart';
+import '../../../models/news_model.dart';
 
 class MyTrendingPage extends StatelessWidget {
   const MyTrendingPage({super.key});

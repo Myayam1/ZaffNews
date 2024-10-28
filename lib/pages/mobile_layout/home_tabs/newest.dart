@@ -2,13 +2,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zaffnews/component_page/card_adapter.dart';
-import 'package:zaffnews/controllers/dashboard_controller.dart';
+import 'package:zaffnews/controllers/navigation_controller.dart';
 import 'package:zaffnews/data/news_data.dart';
 import 'package:zaffnews/widgets/my_list_item.dart';
 import 'package:zaffnews/widgets/news_carousel_card.dart';
 
-import '../../constants/colors.dart';
-import '../../models/news_model.dart';
+import '../../../constants/colors.dart';
+import '../../../models/news_model.dart';
 
 class NewestView extends StatelessWidget {
   final List<NewsModel> items = newestArticles;
@@ -16,7 +16,7 @@ class NewestView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final DashboardController dashboardController = Get.find();
+    final NavigationController dashboardController = Get.find();
 
     return SingleChildScrollView(
       child: Column(
