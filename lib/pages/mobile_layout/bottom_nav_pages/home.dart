@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:zaffnews/pages/mobile_layout/home_tabs/for_you.dart';
 import 'package:zaffnews/pages/mobile_layout/home_tabs/newest.dart';
 import '../../../widgets/mobile_layout/mobile_appbar.dart';

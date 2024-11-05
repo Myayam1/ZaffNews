@@ -31,7 +31,6 @@ class TabletAppbar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
               Expanded(
                 child: Center(
                   child: Text(
@@ -61,7 +60,8 @@ class TabletAppbar extends StatelessWidget implements PreferredSizeWidget {
       bottom: hasTabs ? PreferredSize(
         preferredSize: Size.fromHeight(48.0), // Height for TabBar only
         child: Container(
-          padding: EdgeInsets.only(top: 8.0), // Set desired top padding
+          padding: EdgeInsets.zero, // Set desired top padding
+          margin: EdgeInsets.zero,
           child: TabBar(
             onTap: (index) => tabController.changeTab(index), // Update the selected index
             tabs: [

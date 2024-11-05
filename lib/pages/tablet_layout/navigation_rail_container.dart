@@ -8,7 +8,7 @@ import 'package:zaffnews/widgets/tablet_layout/tablet_appbar.dart';
 
 import '../../widgets/my_icon_button.dart';
 import '../mobile_layout/bottom_nav_pages/account.dart';
-import '../mobile_layout/bottom_nav_pages/home.dart';
+import 'nav_rail_pages/home.dart';
 
 class TabletContainerPage extends StatelessWidget {
   const TabletContainerPage({super.key});
@@ -16,7 +16,7 @@ class TabletContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NavigationController navController = Get.find();
-    final List<Widget> menus = [MobileHomePage(), TabletTrendingPage(), MobileAccountPage()];
+    final List<Widget> menus = [TabletHomePage(), TabletTrendingPage(), MobileAccountPage()];
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -54,21 +54,7 @@ class TabletContainerPage extends StatelessWidget {
           )),
           Expanded(
               child: Obx(() {
-                return Scaffold(
-                  appBar: TabletAppbar(
-                    title: navController.selectedIndex.value == 0 ? 'Home'
-                              : navController.selectedIndex.value == 1
-                                ? 'Trending News'
-                                : 'My Account',
-                  ),
-                  body: Container(
-                    color: backgroundColor,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0)),
-                      child: Container(color: Colors.white, child: menus[navController.selectedIndex.value])
-                    ),
-                  ),
-                );
+                return Container(child: menus[navController.selectedIndex.value]);
               })
           )
         ],
