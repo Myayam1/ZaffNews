@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zaffnews/controllers/database_controller.dart';
 import 'package:zaffnews/models/news_model.dart';
-import 'package:zaffnews/widgets/sub_menu_appbar.dart';
+import 'package:zaffnews/widgets/mobile_layout/sub_menu_appbar.dart';
 import '../../../component_page/card_adapter.dart';
 
-class MySavedArticlesPage extends StatelessWidget {
-  MySavedArticlesPage({super.key});
+class MobileSavedArticlesPage extends StatelessWidget {
+  MobileSavedArticlesPage({super.key});
 
   final DatabaseController databaseController = Get.find<DatabaseController>();
 
@@ -14,7 +14,7 @@ class MySavedArticlesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: MySubAppbar(title: "Saved Articles"),
+      appBar: MobileSubAppbar(title: "Saved Articles"),
       body: Obx(() { // Use Obx to reactively listen for changes
         List<NewsModel> items = databaseController.savedArticles;
         if (items.isEmpty) {

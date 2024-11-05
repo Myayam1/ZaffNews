@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyBlockedChannelsPage extends StatelessWidget {
-  const MyBlockedChannelsPage({super.key});
+class MobileBlockedChannelsPage extends StatelessWidget {
+  const MobileBlockedChannelsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

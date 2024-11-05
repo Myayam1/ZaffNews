@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:zaffnews/component_page/card_adapter.dart';
 import 'package:zaffnews/controllers/navigation_controller.dart';
 import 'package:zaffnews/data/news_data.dart';
-import 'package:zaffnews/widgets/my_list_item.dart';
-import 'package:zaffnews/widgets/news_carousel_card.dart';
+import 'package:zaffnews/widgets/mobile_layout/mobile_list_item.dart';
+import 'package:zaffnews/widgets/mobile_layout/news_carousel_card.dart';
 
 import '../../../constants/colors.dart';
 import '../../../models/news_model.dart';
 
-class NewestView extends StatelessWidget {
+class MobileNewestView extends StatelessWidget {
   final List<NewsModel> items = newestArticles;
   final List<NewsModel> carouselItems = trendingNews;
 
@@ -21,7 +21,7 @@ class NewestView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          MyListItem(text: "Trending News", isSubheading: true, onPressed: () { dashboardController.selectedIndex.value = 1; }),
+          MobileListItem(text: "Trending News", isSubheading: true, onPressed: () { dashboardController.selectedIndex.value = 1; }),
           Divider(height: 1.0, color: dividerColor),
           CarouselSlider(
             options: CarouselOptions(
@@ -36,12 +36,12 @@ class NewestView extends StatelessWidget {
             items: carouselItems.map((item) {
               return Builder(
                 builder: (BuildContext context) {
-                  return MyNewsCarouselCard(model: item);
+                  return MobileNewsCarouselCard(model: item);
                 },
               );
             }).toList(),
           ),
-          MyListItem(text: "Newest Articles", isSubheading: true, isClickable: false),
+          MobileListItem(text: "Newest Articles", isSubheading: true, isClickable: false),
           Divider(height: 1.0, color: dividerColor),
           Column(
             children: items.map((entry) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/models/news_model.dart';
-import 'package:zaffnews/widgets/news_card.dart';
-import 'package:zaffnews/widgets/news_card_secondary.dart';
+import 'package:zaffnews/widgets/mobile_layout/news_card.dart';
+import 'package:zaffnews/widgets/mobile_layout/news_card_secondary.dart';
 
 class NewsAdapter extends StatelessWidget {
   final NewsModel model;
@@ -18,7 +18,7 @@ class NewsAdapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isSecondary
-        ? MySecondaryNewsCard(model: model) // Show secondary card
-        : MyNewsCard(model: model, hasDivider: hasDivider); // Show primary card
+        ? MobileSecondaryNewsCard(model: model) // Show secondary card
+        : MobileNewsCard(model: model, hasDivider: hasDivider); // Show primary card
   }
 }

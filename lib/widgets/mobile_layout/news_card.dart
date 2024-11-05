@@ -4,17 +4,18 @@ import 'package:zaffnews/helpers/overlay_helper.dart';
 import 'package:zaffnews/models/news_model.dart';
 import 'package:zaffnews/widgets/my_icon_button.dart';
 
-class MyNewsCard extends StatelessWidget {
+class MobileNewsCard extends StatelessWidget {
   final NewsModel model;
   final bool hasDivider;
 
-  const MyNewsCard({super.key, required this.model, this.hasDivider = true});
+  const MobileNewsCard({super.key, required this.model, this.hasDivider = true});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
       child: InkWell(
+        splashColor: inactiveText1,
         child: Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.only(right: 13.0, left: 13.0, top: 15.0),

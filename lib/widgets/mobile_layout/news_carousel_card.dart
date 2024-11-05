@@ -4,10 +4,10 @@ import 'package:zaffnews/helpers/overlay_helper.dart';
 import 'package:zaffnews/models/news_model.dart';
 import 'package:zaffnews/widgets/my_icon_button.dart';
 
-class MyNewsCarouselCard extends StatelessWidget {
+class MobileNewsCarouselCard extends StatelessWidget {
   final NewsModel model;
 
-  const MyNewsCarouselCard({super.key, required this.model});
+  const MobileNewsCarouselCard({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {

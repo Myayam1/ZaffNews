@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/models/news_model.dart';
 
-import '../constants/colors.dart';
-import '../helpers/overlay_helper.dart';
-import 'my_icon_button.dart';
+import '../../constants/colors.dart';
+import '../../helpers/overlay_helper.dart';
+import '../my_icon_button.dart';
 
-class MySecondaryNewsCard extends StatelessWidget {
+class MobileSecondaryNewsCard extends StatelessWidget {
   final NewsModel model;
 
-  const MySecondaryNewsCard({super.key, required this.model});
+  const MobileSecondaryNewsCard({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {

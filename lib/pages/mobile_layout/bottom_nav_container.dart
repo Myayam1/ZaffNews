@@ -18,7 +18,7 @@ class MobileContainerPage extends StatelessWidget {
     final NavigationController navController =
     Get.find();
 
-    final List<Widget> menus = [MyHomePage(), MyTrendingPage(), MyAccountPage()];
+    final List<Widget> menus = [MobileHomePage(), MobileTrendingPage(), MobileAccountPage()];
 
     return Obx(() {
       return Scaffold(

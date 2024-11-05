@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:zaffnews/constants/colors.dart';
 import 'package:zaffnews/widgets/my_icon_button.dart';
 
-class MySubAppbar extends StatelessWidget implements PreferredSizeWidget {
+class MobileSubAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Function(String)? onSearchChanged;
 
-  const MySubAppbar({
+  const MobileSubAppbar({
     Key? key,
     this.title,
     this.onSearchChanged,

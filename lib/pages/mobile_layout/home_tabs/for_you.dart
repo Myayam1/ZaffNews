@@ -4,7 +4,7 @@ import 'package:zaffnews/models/news_model.dart';
 
 import '../../../component_page/card_adapter.dart';
 
-class ForYouView extends StatelessWidget {
+class MobileForYouView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<NewsModel> items = newsForYou;

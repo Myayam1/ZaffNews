@@ -3,17 +3,17 @@ import 'package:zaffnews/component_page/list_adapter.dart';
 import 'package:zaffnews/constants/colors.dart';
 import 'package:zaffnews/data/list_data.dart';
 import 'package:zaffnews/models/list_model.dart';
-import 'package:zaffnews/widgets/my_appbar.dart';
+import 'package:zaffnews/widgets/mobile_layout/mobile_appbar.dart';
 
-class MyAccountPage extends StatelessWidget {
-  const MyAccountPage({super.key});
+class MobileAccountPage extends StatelessWidget {
+  const MobileAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final List<ListModel> listItems = accountList;
 
     return Scaffold(
-      appBar: MyAppbar(title: "My Account", showSearch: false),
+      appBar: MobileAppbar(title: "My Account", showSearch: false),
       body: Expanded(
         child: Container(
           color: Colors.white,

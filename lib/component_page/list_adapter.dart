@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/models/list_model.dart';
 
-import '../widgets/my_list_item.dart';
+import '../widgets/mobile_layout/mobile_list_item.dart';
 
 class ListAdapter extends StatelessWidget {
   final List<ListModel> items;
@@ -12,7 +12,7 @@ class ListAdapter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: items.map((entry) {
-        return MyListItem(
+        return MobileListItem(
           text: entry.text,
           leadingIcon: entry.leadingIcon,
           trailingIcon: entry.trailingIcon,
