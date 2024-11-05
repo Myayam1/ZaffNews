@@ -4,12 +4,12 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 import 'package:zaffnews/constants/colors.dart';
 import 'package:zaffnews/models/news_model.dart';
-import 'package:zaffnews/widgets/bottom_sheet.dart';
+import 'package:zaffnews/widgets/mobile_layout/bottom_sheet.dart';
 import 'package:zaffnews/widgets/snackbar.dart'; // Adjust the import according to your file structure
 
 void showMyBottomSheet(NewsModel model) {
   Get.bottomSheet(
-    MyBottomSheet(newsModel: model), // Your bottom sheet widget
+    MobileBottomSheet(newsModel: model), // Your bottom sheet widget
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
     ),

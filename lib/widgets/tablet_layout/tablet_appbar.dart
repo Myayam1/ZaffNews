@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 import 'package:zaffnews/controllers/tab_controller.dart'; // Import your renamed controller
-import 'my_icon_button.dart';
+import '../my_icon_button.dart';
 
-class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
+class TabletAppbar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  final bool showSearch;
   final bool hasTabs;
 
-  const MyAppbar({
+  const TabletAppbar({
     Key? key,
     required this.title,
-    this.showSearch = true,
     this.hasTabs = false
   }) : super(key: key);
 
@@ -33,14 +31,7 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: 30,
-                height: 20.46,
-                child: SvgPicture.asset(
-                  'lib/assets/zn_logo.svg',
-                  fit: BoxFit.contain,
-                ),
-              ),
+
               Expanded(
                 child: Center(
                   child: Text(
@@ -55,15 +46,14 @@ class MyAppbar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                 ),
               ),
-              if (showSearch)
-                MyIconButton(
-                  icon: Icons.search,
-                  onPressed: () {
-                    Get.toNamed('/search');
-                  },
-                )
-              else
-                SizedBox(width: 24),
+              SizedBox(
+                width: 30,
+                height: 20.46,
+                child: SvgPicture.asset(
+                  'lib/assets/zn_logo.svg',
+                  fit: BoxFit.contain,
+                ),
+              ),
             ],
           ),
         ),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:zaffnews/component_page/list_adapter.dart';
 import 'package:zaffnews/data/list_data.dart';
 import 'package:zaffnews/models/news_model.dart';
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
-class MyBottomSheet extends StatelessWidget {
+class MobileBottomSheet extends StatelessWidget {
   final NewsModel newsModel;
-  const MyBottomSheet({super.key, required this.newsModel}); // Ensure the key is here
+  const MobileBottomSheet({super.key, required this.newsModel}); // Ensure the key is here
 
   @override
   Widget build(BuildContext context) {

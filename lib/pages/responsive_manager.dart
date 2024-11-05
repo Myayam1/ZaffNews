@@ -13,9 +13,9 @@ class ResponsiveManager extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() {
       if (controller.isMobile()) {
-        return MobileContainerPage();
+        return MobileContainerPage(); // bottom nav bar
       } else if (controller.isTablet()) {
-        return TabletContainerPage();
+        return TabletContainerPage(); // nav rail
       } else {
         throw Exception("inappropriate screen width. what are you doing? either way, get out.");
       }

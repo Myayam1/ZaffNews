@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../constants/colors.dart';
+import '../../constants/colors.dart';
 
-class MyListItem extends StatelessWidget {
+class MobileListItem extends StatelessWidget {
   final String text;
   final IconData? leadingIcon;
   final IconData? trailingIcon;
@@ -11,7 +11,7 @@ class MyListItem extends StatelessWidget {
   final Color? color;
   final VoidCallback? onPressed;
 
-  const MyListItem({
+  const MobileListItem({
     Key? key,
     required this.text,
     this.trailingIcon,

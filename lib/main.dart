@@ -13,7 +13,7 @@ import 'package:zaffnews/pages/responsive_manager.dart';
 import 'package:zaffnews/pages/mobile_layout/sub_pages/blocked_channels.dart';
 import 'package:zaffnews/pages/mobile_layout/sub_pages/saved_articles.dart';
 import 'package:zaffnews/pages/mobile_layout/sub_pages/search_page.dart';
-import 'package:zaffnews/widgets/bottom_sheet.dart';
+import 'package:zaffnews/widgets/mobile_layout/bottom_sheet.dart';
 
 import 'controllers/responsive_controller.dart';
 import 'controllers/tab_controller.dart';
@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
           controller.updateScreenWidth(constraints.maxWidth);
           return ResponsiveManager();
         })),
-        GetPage(name: '/search', page: () => MySearchPage()),
-        GetPage(name: '/blocked-channels', page: () => MyBlockedChannelsPage()),
-        GetPage(name: '/saved', page: () => MySavedArticlesPage()),
+        GetPage(name: '/search', page: () => MobileSearchPage()),
+        GetPage(name: '/blocked-channels', page: () => MobileBlockedChannelsPage()),
+        GetPage(name: '/saved', page: () => MobileSavedArticlesPage()),
       ],
     );
   }

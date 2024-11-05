@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:zaffnews/data/news_data.dart';
 import 'package:zaffnews/models/news_model.dart';
-import 'package:zaffnews/widgets/sub_menu_appbar.dart';
+import 'package:zaffnews/widgets/mobile_layout/sub_menu_appbar.dart';
 import '../../../component_page/card_adapter.dart';
 
-class MySearchPage extends StatelessWidget {
+class MobileSearchPage extends StatelessWidget {
   final List<NewsModel> allNews = [
     ...newestArticles,
     ...trendingNews,
@@ -12,7 +12,7 @@ class MySearchPage extends StatelessWidget {
   ];
   final ValueNotifier<List<NewsModel>> filteredNewsNotifier = ValueNotifier([]);
 
-  MySearchPage({Key? key}) : super(key: key) {
+  MobileSearchPage({Key? key}) : super(key: key) {
     // Initialize the filtered news with all news
     filteredNewsNotifier.value = allNews;
   }
@@ -20,7 +20,7 @@ class MySearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MySubAppbar(
+      appBar: MobileSubAppbar(
         onSearchChanged: (value) {
           // Filter the news based on the input
           filteredNewsNotifier.value = allNews.where((news) {

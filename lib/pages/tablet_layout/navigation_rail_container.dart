@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zaffnews/constants/colors.dart';
 import 'package:zaffnews/controllers/navigation_controller.dart';
+import 'package:zaffnews/pages/tablet_layout/nav_rail_pages/trending.dart';
+import 'package:zaffnews/widgets/mobile_layout/mobile_appbar.dart';
+import 'package:zaffnews/widgets/tablet_layout/tablet_appbar.dart';
 
+import '../../widgets/my_icon_button.dart';
 import '../mobile_layout/bottom_nav_pages/account.dart';
 import '../mobile_layout/bottom_nav_pages/home.dart';
-import '../mobile_layout/bottom_nav_pages/trending.dart';
 
 class TabletContainerPage extends StatelessWidget {
   const TabletContainerPage({super.key});
@@ -13,31 +16,59 @@ class TabletContainerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final NavigationController navController = Get.find();
-    final List<Widget> menus = [MyHomePage(), MyTrendingPage(), MyAccountPage()];
+    final List<Widget> menus = [MobileHomePage(), TabletTrendingPage(), MobileAccountPage()];
 
     return Scaffold(
+      backgroundColor: backgroundColor,
       body: Row(
         children: [
-          Obx(() => NavigationRail(
-            selectedIndex: navController.selectedIndex.value,
-            onDestinationSelected: (int index) {
-              navController.changeMenu(index);
-            },
-            destinations: [
-              NavigationRailDestination(
-                  icon: Icon(Icons.home_outlined), label: Text("Home")),
-              NavigationRailDestination(
-                  icon: Icon(Icons.language), label: Text("Trending")),
-              NavigationRailDestination(
-                  icon: Icon(Icons.account_circle), label: Text("My Account")),
-            ],
-            backgroundColor: backgroundColor,
-            labelType: NavigationRailLabelType.selected,
-            groupAlignment: 0.0,
+          Obx(() => Container(
+            width: 80.0,
+            child: NavigationRail(
+              onDestinationSelected: (int index) {
+                navController.changeMenu(index);
+              },
+              destinations: [
+                NavigationRailDestination(
+                    icon: Icon(Icons.home_outlined), label: Text("Home")),
+                NavigationRailDestination(
+                    icon: Icon(Icons.language), label: Text("Trending")),
+                NavigationRailDestination(
+                    icon: Icon(Icons.account_circle), label: Text("My Account")),
+              ],
+              selectedIndex: navController.selectedIndex.value,
+              backgroundColor: backgroundColor,
+              groupAlignment: 0.0,
+              labelType: NavigationRailLabelType.selected,
+              leading: navController.selectedIndex.value == 2 ? null
+                       : Container(
+                         padding: EdgeInsets.only(top: 16.0),
+                         child: MyIconButton(
+                            icon: Icons.search,
+                            onPressed: () {
+                              Get.toNamed('/search');
+                            },
+                         ),
+                       ),
+            ),
           )),
           Expanded(
               child: Obx(() {
-                return menus[navController.selectedIndex.value];
+                return Scaffold(
+                  appBar: TabletAppbar(
+                    title: navController.selectedIndex.value == 0 ? 'Home'
+                              : navController.selectedIndex.value == 1
+                                ? 'Trending News'
+                                : 'My Account',
+                  ),
+                  body: Container(
+                    color: backgroundColor,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(20.0)),
+                      child: Container(color: Colors.white, child: menus[navController.selectedIndex.value])
+                    ),
+                  ),
+                );
               })
           )
         ],
