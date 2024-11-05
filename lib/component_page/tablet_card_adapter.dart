@@ -17,22 +17,24 @@ class TabletNewsAdapter extends StatelessWidget {
     final List<NewsModel> leftModels = [for (var i = 0; i < models.length; i += 2) models[i]];
     final List<NewsModel> rightModels = [for (var i = 1; i < models.length; i += 2) models[i]];
 
-    return Row(
-      children: [
-        SizedBox(width: 24.0,),
-        Column(
-          children: leftModels.map((model) {
-            return TabletNewsCard(model: model);
-          }).toList()
-        ),
-        SizedBox(width: 16.0,),
-        Column(
-            children: rightModels.map((model) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            children: leftModels.map((model) {
               return TabletNewsCard(model: model);
             }).toList()
-        ),
-        SizedBox(width: 24.0,)
-      ],
+          ),
+          SizedBox(width: 16.0,),
+          Column(
+              children: rightModels.map((model) {
+                return TabletNewsCard(model: model);
+              }).toList()
+          ),
+        ],
+      ),
     );
   }
 }
